@@ -39,10 +39,10 @@ type AppContextValue = {
 
 const AppContext = createContext<AppContextValue | null>(null);
 
-const AUTH_STORAGE_KEY = "vibecart-auth";
-const CART_STORAGE_KEY = "vibecart-cart";
-const WISHLIST_STORAGE_KEY = "vibecart-wishlist";
-const ORDER_STORAGE_KEY = "vibecart-orders";
+const AUTH_STORAGE_KEY = "Fashcart-auth";
+const CART_STORAGE_KEY = "Fashcart-cart";
+const WISHLIST_STORAGE_KEY = "Fashcart-wishlist";
+const ORDER_STORAGE_KEY = "Fashcart-orders";
 
 const toPublicUser = (user: UserType): PublicUserType => ({
   id: user.id,

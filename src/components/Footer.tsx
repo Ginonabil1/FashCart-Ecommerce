@@ -8,16 +8,16 @@ const Footer = () => {
         <div className="space-y-5">
           <Link href="/" className="flex items-center gap-3">
             <div className="rounded-2xl bg-white/8 p-2">
-              <Image src="/logo.png" alt="VibeCart" width={34} height={34} />
+              <Image src="/logo.png" alt="FashCart" width={34} height={34} />
             </div>
             <div>
               <p className="font-[family-name:var(--font-playfair)] text-2xl leading-none">
-                VibeCart
+                FashCart
               </p>
             </div>
           </Link>
 
-          <p className="text-sm text-white/45">© 2026 VibeCart. All rights reserved.</p>
+          <p className="text-sm text-white/45">© 2026 FashCart. All rights reserved.</p>
         </div>
 
         <div className="flex flex-col gap-4 text-sm text-white/65">

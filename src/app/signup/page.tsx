@@ -85,7 +85,7 @@ const SignupPage = () => {
       <section className="rounded-[2rem] border border-gray-200 bg-white p-8 shadow-lg sm:p-10">
         <div className="mb-8">
           <p className="text-sm font-medium uppercase tracking-[0.25em] text-gray-400">
-            Join VibeCart
+            Join FashCart
           </p>
           <h2 className="mt-2 text-3xl font-semibold text-gray-900">Sign up</h2>
           <p className="mt-2 text-sm text-gray-500">

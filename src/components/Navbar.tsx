@@ -25,7 +25,7 @@ const Navbar = () => {
             <div className="rounded-2xl bg-[#171717] p-2 shadow-lg">
               <Image
                 src="/logo.png"
-                alt="VibeCart"
+                alt="FashCart"
                 width={34}
                 height={34}
                 className="h-7 w-7"
@@ -33,7 +33,7 @@ const Navbar = () => {
             </div>
             <div>
               <p className="font-[family-name:var(--font-playfair)] text-2xl leading-none text-black">
-                VibeCart
+                FashCart
               </p>
               <p className="mt-1 text-[11px] uppercase tracking-[0.28em] text-[var(--muted)]">
                 Modern Storefront

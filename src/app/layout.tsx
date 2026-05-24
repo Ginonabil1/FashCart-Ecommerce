@@ -18,7 +18,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "VibeCart | Modern Fashion Storefront",
+  title: "FashCart | Modern Fashion Storefront",
   description:
     "A polished multi-page fashion storefront built with Next.js, curated product discovery, and a refined ecommerce UI.",
 };

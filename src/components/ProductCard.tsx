@@ -14,7 +14,7 @@ const ProductCard = ({ product }: { product: ProductType }) => {
     color: product.colors[0],
   });
 
-  const { addToCart, toggleWishlist, isWishlisted, hasHydrated } =
+  const { addToCart, toggleWishlist, isWishlisted, hasHydrated, currentUser } =
     useAppContext();
 
   const handleProductType = ({
@@ -56,19 +56,21 @@ const ProductCard = ({ product }: { product: ProductType }) => {
           <div className="absolute left-4 top-4 z-10 rounded-full bg-white/85 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--muted)]">
             {product.category.replace("-", " ")}
           </div>
-          <button
-            type="button"
-            aria-label="Toggle wishlist"
-            onClick={(event) => {
-              event.preventDefault();
-              handleWishlist();
-            }}
-            className={`absolute right-4 top-4 z-10 rounded-full p-2 ${
-              wishlisted ? "bg-[#171717] text-white" : "bg-white/85 text-[var(--muted)]"
-            }`}
-          >
-            <Heart className={`h-4 w-4 ${wishlisted ? "fill-current" : ""}`} />
-          </button>
+          {hasHydrated && currentUser && (
+            <button
+              type="button"
+              aria-label="Toggle wishlist"
+              onClick={(event) => {
+                event.preventDefault();
+                handleWishlist();
+              }}
+              className={`absolute right-4 top-4 z-10 rounded-full p-2 cursor-pointer ${
+                wishlisted ? "bg-[#171717] text-white" : "bg-white/85 text-[var(--muted)]"
+              }`}
+            >
+              <Heart className={`h-4 w-4 ${wishlisted ? "fill-current" : ""}`} />
+            </button>
+          )}
           <Image
             src={product.images[productTypes.color]}
             alt={product.name}
@@ -95,7 +97,7 @@ const ProductCard = ({ product }: { product: ProductType }) => {
           </div>
           <div className="text-right">
             <p className="text-xs uppercase tracking-[0.2em] text-[var(--muted)]">
-              Palette
+              colors
             </p>
             <div className="mt-2 flex items-center justify-end gap-2">
               {product.colors.map((color) => (
@@ -121,7 +123,7 @@ const ProductCard = ({ product }: { product: ProductType }) => {
             </div>
           </div>
         </div>
-        <div className="flex items-center justify-between gap-4 text-xs">
+        <div className="flex items-end justify-between gap-4 text-xs">
           <div className="flex flex-col gap-2">
             <span className="uppercase tracking-[0.2em] text-[var(--muted)]">
               Size
@@ -140,28 +142,16 @@ const ProductCard = ({ product }: { product: ProductType }) => {
                 </option>
               ))}
             </select>
-          </div>
-          <div className="rounded-full bg-[var(--surface)] px-4 py-2 text-center">
-            <p className="text-[10px] uppercase tracking-[0.2em] text-[var(--muted)]">
-              Fit
-            </p>
-            <p className="mt-1 font-semibold text-black">Regular</p>
-          </div>
-        </div>
-        <div className="flex items-center justify-between gap-3">
-          <Link
-            href={`/products/${product.id}`}
-            className="rounded-full border border-black/10 px-4 py-2 text-sm font-medium text-[var(--muted)] hover:bg-white hover:text-black"
-          >
-            View details
-          </Link>
+          </div>     
+          <div >
           <button
             onClick={handleAddToCart}
-            className="inline-flex items-center gap-2 rounded-full bg-[#171717] px-4 py-2 text-sm font-medium text-white shadow-lg hover:-translate-y-0.5 hover:bg-black"
+            className="inline-flex cursor-pointer gap-2 rounded-full bg-[#171717] px-4 py-2 text-sm font-medium text-white shadow-lg hover:-translate-y-0.5 hover:bg-black"
           >
             <ShoppingCart className="h-4 w-4" />
             Add to Cart
           </button>
+          </div>    
         </div>
       </div>
     </div>

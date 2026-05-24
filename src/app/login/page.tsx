@@ -59,7 +59,7 @@ const LoginPage = () => {
         </h1>
         <p className="mt-4 max-w-lg text-sm text-white/80">
           Keep your cart, shipping details, and product preferences in one
-          place with your VibeCart account.
+          place with your FashCart account.
         </p>
       </section>
 

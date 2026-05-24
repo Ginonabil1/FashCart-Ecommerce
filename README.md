@@ -1,6 +1,6 @@
-# VibeCart
+# FashCart
 
-VibeCart is a modern ecommerce storefront built with Next.js, React, TypeScript, and Tailwind CSS. This folder contains only the client-facing shopping experience and is ready to be used as a standalone project.
+FashCart is a modern ecommerce storefront built with Next.js, React, TypeScript, and Tailwind CSS. This repository contains only the client-facing shopping experience and is ready to run as a standalone project.
 
 ## Overview
 
@@ -29,16 +29,15 @@ The project focuses on the customer side of the store and includes:
 ## Project Structure
 
 ```text
-client/
-├── public/             # Static assets and product images
-├── src/
-│   ├── app/            # App Router pages
-│   ├── components/     # Reusable UI and feature components
-│   ├── context/        # Global app state for auth, cart, wishlist, and orders
-│   ├── lib/            # Local product data and helpers
-│   └── types.ts        # Shared TypeScript types and validation schemas
-├── package.json
-└── README.md
+public/             # Static assets and product images
+src/
+  app/              # App Router pages
+  components/       # Reusable UI and feature components
+  context/          # Global app state for auth, cart, wishlist, and orders
+  lib/              # Local product data and helpers
+  types.ts          # Shared TypeScript types and validation schemas
+package.json
+README.md
 ```
 
 ## Key Features
@@ -67,9 +66,9 @@ Signed-in users can save products to a wishlist and review completed orders from
 
 ## Data Handling
 
-This client currently works without a backend.
+This project currently works without a backend.
 
-- Product data is stored locally in [`src/lib/products.ts`](/E:/Course%20Web%20devolper/E-commerce/client/src/lib/products.ts)
+- Product data is stored locally in `src/lib/products.ts`
 - Cart data is stored in `localStorage`
 - User accounts are stored in `localStorage`
 - Wishlist data is stored in `localStorage`
@@ -104,10 +103,7 @@ npm run start
 npm run lint
 ```
 
-## Notes for Standalone Use
+## Notes
 
-If you are extracting this folder into its own repository:
-
-- Run `npm install` inside that extracted folder
 - Update the package name in `package.json` if you want a production-ready project identity
 - Replace local demo storage with a backend service if you need real authentication, payments, or persistent orders

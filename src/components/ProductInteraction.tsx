@@ -21,7 +21,7 @@ const ProductInteraction = ({
   const searchParams = useSearchParams();
   const [quantity, setQuantity] = useState(1);
 
-  const { addToCart, toggleWishlist, isWishlisted, hasHydrated } =
+  const { addToCart, toggleWishlist, isWishlisted, hasHydrated, currentUser } =
     useAppContext();
 
   const handleTypeChange = (type: string, value: string) => {
@@ -148,17 +148,19 @@ const ProductInteraction = ({
         <ShoppingCart className="w-4 h-4" />
         Buy this Item
       </button>
-      <button
-        onClick={handleWishlist}
-        className={`px-4 py-2 rounded-md flex items-center justify-center cursor-pointer gap-2 text-sm font-medium ${
-          wishlisted
-            ? "bg-rose-100 text-rose-700"
-            : "ring-1 ring-gray-300 text-gray-700"
-        }`}
-      >
-        <Heart className={`w-4 h-4 ${wishlisted ? "fill-current" : ""}`} />
-        {wishlisted ? "Saved to Wishlist" : "Add to Wishlist"}
-      </button>
+      {hasHydrated && currentUser && (
+        <button
+          onClick={handleWishlist}
+          className={`px-4 py-2 rounded-md flex items-center justify-center cursor-pointer gap-2 text-sm font-medium ${
+            wishlisted
+              ? "bg-rose-100 text-rose-700"
+              : "ring-1 ring-gray-300 text-gray-700"
+          }`}
+        >
+          <Heart className={`w-4 h-4 ${wishlisted ? "fill-current" : ""}`} />
+          {wishlisted ? "Saved to Wishlist" : "Add to Wishlist"}
+        </button>
+      )}
     </div>
   );
 };
