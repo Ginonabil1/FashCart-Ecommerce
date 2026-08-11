@@ -1,0 +1,256 @@
+.site-header {
+  position: sticky;
+  top: 12px;
+  z-index: 20;
+  margin-bottom: 32px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 14px 42px rgba(0, 0, 0, 0.06);
+  backdrop-filter: blur(16px);
+}
+
+.nav,
+.nav-links,
+.nav-actions,
+.brand,
+.mobile-menu,
+.mobile-menu-toggle {
+  display: flex;
+  align-items: center;
+}
+
+.nav {
+  min-height: 78px;
+  display: grid;
+  grid-template-columns: minmax(180px, 1fr) auto minmax(180px, 1fr);
+  gap: 20px;
+  padding: 14px 20px;
+}
+
+.brand {
+  gap: 10px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.brand-mark {
+  display: grid;
+  width: 50px;
+  height: 50px;
+  place-items: center;
+  border-radius: 18px;
+  background: #171717;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+}
+
+.brand-mark.soft {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.brand-mark img {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
+
+.brand-text {
+  display: grid;
+  gap: 3px;
+}
+
+.brand-text strong {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.brand-text small {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+}
+
+.mobile-menu {
+  display: contents;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.nav-links {
+  justify-self: center;
+  gap: 2px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 999px;
+  background: #f6f1e8;
+  padding: 4px;
+  color: var(--muted);
+}
+
+.nav-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: 999px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+  background: white;
+  color: #171717;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  width: 42px;
+  height: 42px;
+  justify-content: center;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #171717;
+  color: #fff;
+}
+
+.nav-actions {
+  justify-self: end;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.icon-link span {
+  position: absolute;
+  top: -5px;
+  right: -4px;
+  display: grid;
+  min-width: 20px;
+  height: 20px;
+  place-items: center;
+  border-radius: 999px;
+  background: #171717;
+  color: white;
+  font-size: 11px;
+}
+
+@media (max-width: 640px) {
+  .site-header {
+    top: 8px;
+    margin-bottom: 22px;
+    border-radius: 22px;
+  }
+
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .mobile-menu-toggle {
+    display: inline-flex;
+    margin-left: auto;
+    transition: transform 180ms ease, background 180ms ease;
+  }
+
+  .nav:has(.mobile-menu.open) .brand {
+    display: none;
+  }
+
+  .mobile-menu-toggle:hover {
+    transform: translateY(-1px);
+    background: #000;
+  }
+
+  .brand-mark {
+    width: 44px;
+    height: 44px;
+    border-radius: 15px;
+  }
+
+  .brand-text strong {
+    font-size: 20px;
+  }
+
+  .brand-text small {
+    font-size: 9px;
+    letter-spacing: 0.18em;
+  }
+
+  .mobile-menu {
+    order: 3;
+    display: grid;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-6px);
+    transition: max-height 260ms ease, opacity 220ms ease, padding 220ms ease, transform 220ms ease;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .mobile-menu.open {
+    max-height: 520px;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .nav-links {
+    display: grid;
+    width: 100%;
+    padding: 0;
+    border-width: 0;
+    border-radius: 20px;
+    grid-template-columns: 1fr;
+    scrollbar-width: none;
+  }
+
+  .mobile-menu.open .nav-links {
+    padding: 8px;
+    border-width: 1px;
+  }
+
+  .nav-links a {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 14px;
+  }
+
+  .nav-links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-actions {
+    width: 100%;
+    justify-content: center;
+    padding: 8px;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    background: #f6f1e8;
+  }
+
+  .icon-link,
+  .icon-button {
+    width: 38px;
+    height: 38px;
+  }
+
+  .desktop-icon {
+    display: inline-flex;
+  }
+}
+
+@media (max-width: 420px) {
+  .brand-text small {
+    display: none;
+  }
+
+  .nav-actions .button.small {
+    width: auto;
+    padding: 9px 12px;
+  }
+}

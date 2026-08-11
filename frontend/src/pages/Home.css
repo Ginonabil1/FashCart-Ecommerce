@@ -1,0 +1,20 @@
+.featured-banner {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 3 / 1;
+  margin-bottom: 20px;
+  border-radius: 22px;
+}
+
+.featured-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 640px) {
+  .featured-banner {
+    margin-bottom: 8px;
+    border-radius: 18px;
+  }
+}

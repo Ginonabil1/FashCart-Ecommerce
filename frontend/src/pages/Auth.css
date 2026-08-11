@@ -1,0 +1,13 @@
+.auth-card {
+  display: flex;
+  width: min(480px, 100%);
+  flex-direction: column;
+  gap: 16px;
+  margin: 0 auto;
+}
+
+@media (max-width: 640px) {
+  .auth-card {
+    border-radius: 22px;
+  }
+}
