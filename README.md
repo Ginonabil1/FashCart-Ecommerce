@@ -82,10 +82,7 @@ npm run seed
 
 Default seeded admin:
 
-```text
-Email: admin@fashcart.com
-Password: admin12345
-```
+Admin demo credentials are available upon request.
 
 ### 5. Run the backend
 
